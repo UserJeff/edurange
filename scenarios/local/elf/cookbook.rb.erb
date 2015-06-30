@@ -9,8 +9,13 @@ script "install_elf" do
   cd elf
   ./install
   cd /tmp
+
+
+  #Save bash history after every command
+  echo "shopt -s histappend;export PROMPT_COMMAND='history -a; history -c; history -r; $PROMPT_COMMAND'" >> /etc/profile
   touch test-file
   EOH
+    #the path can be changed to /etc/profile or /etc/bash.bashrc so it will apply to all users
 
   not_if "test -e /tmp/test-file"
 end
