@@ -6,15 +6,20 @@ Roles:
 
   - Name: Player
     Packages:
-      - git
-      - tshark
-      - nmap
-      - python
-      - python-scapy
-      - dsniff
     Recipes:
       - sshd_password_login
       - instant_bash_history
+
+  - Name: Defender
+    Recipes:
+      - iptables_config
+    Packages:
+      - nmap
+
+  - Name: Attacker
+    Recipes:
+    Packages:
+      - nmap
 
 Groups:
   - Name: Instructor
@@ -24,9 +29,7 @@ Groups:
       Administrator:
         - Team1_Instance
         - Team2_Instance
-        - Team3_Instance
-        - Team4_Instance
-        - Team5_Instance
+
     Users:
       - Login: instructor
         Password: 4pjiggDk
@@ -54,49 +57,15 @@ Groups:
         Password: 1AxFFTFS
     Description: Describe this Player
 
-  - Name: Team3
-    Access:
-      User:
-        - NAT_Instance
-      Administrator:
-        - Team3_Instance
-    Users:
-      - Login: team3
-        Password: BMsRRhm7
-    Description: Describe this Player
-
-  - Name: Team4
-    Access:
-      User:
-        - NAT_Instance
-      Administrator:
-        - Team4_Instance
-    Users:
-      - Login: team4
-        Password: Atneviqy
-    Description: Describe this Player
-
-  - Name: Team5
-    Access:
-      User:
-        - NAT_Instance
-      Administrator:
-        - Team5_Instance
-    Users:
-      - Login: team5
-        Password: bfuj6u99
-    Description: Describe this Player
-
-
 Scenarios:
-  - Description: A series of Network Security puzzles and challenges designed to educate users on packet manipulation and common network attacks."
-    Name: ScapyHunt
-    Instructions:
+  - Description: Some puzzles built around security a machine using iptables, the linux firewall utility
+    Name: FireFall
+    Instructions: Students should log into the nat and then read the txt file in their home directory
 
 Clouds:
   - Name: Cloud_1
     CIDR_Block: 10.0.0.0/16
-    Scenario: ScapyHunt
+    Scenario: FireFall
 
 Subnets:
   - Name: NAT_Subnet
@@ -124,6 +93,7 @@ Instances:
     IP_Address: 10.0.130.5
     Roles:
       - Player
+      - Defender
 
   - Name: Team2_Instance
     Subnet: Player_Subnet
@@ -131,24 +101,4 @@ Instances:
     IP_Address: 10.0.130.6
     Roles:
       - Player
-
-  - Name: Team3_Instance
-    Subnet: Player_Subnet
-    OS: ubuntu
-    IP_Address: 10.0.130.7
-    Roles:
-      - Player
-
-  - Name: Team4_Instance
-    Subnet: Player_Subnet
-    OS: ubuntu
-    IP_Address: 10.0.130.8
-    Roles:
-      - Player
-
-  - Name: Team5_Instance
-    Subnet: Player_Subnet
-    OS: ubuntu
-    IP_Address: 10.0.130.9
-    Roles:
-      - Player
+      - Attacker

@@ -10,9 +10,6 @@ script "install_strace" do
   ./install
   cd /tmp
   rm -rf /tmp/strace-lyn
-
-  #Save bash history after every command
-  echo "shopt -s histappend;export PROMPT_COMMAND='history -a; history -c; history -r; $PROMPT_COMMAND'" >> /etc/profile
   touch /tmp/test
   EOH
 

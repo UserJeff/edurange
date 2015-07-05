@@ -4,6 +4,7 @@ Roles:
       - cyberdefense_nat
       - shellinabox
       - sshd_password_login
+      - instant_bash_history
   - Name: scoring
     Packages:
       - build-essential
@@ -11,6 +12,7 @@ Roles:
     Recipes:
       - sshd_password_login
       - cdscoring
+      - instant_bash_history
   - Name: redteam
     Packages:
       - build-essential
@@ -18,9 +20,11 @@ Roles:
     Recipes:
       - sshd_password_login
       - wheelie
+      - instant_bash_history
   - Name: blueteam
     Recipes:
       - sshd_password_login
+      - instant_bash_history
 
 Groups:
   - Name: Scoring_Team

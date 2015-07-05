@@ -1,0 +1,11 @@
+script "iptables_config" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+  /sbin/iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+  /sbin/iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  /sbin/iptables -A INPUT -j DROP
+  /sbin/iptables -I INPUT 1 -i lo -j ACCEPT
+  EOH
+end

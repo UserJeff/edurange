@@ -1,5 +1,17 @@
 # Edurange TODO list
 
+# Jeff's TODO list
+
+- Design, implement, and test FireFall scenario
+
+- Save bash history to /tmp whenever an instance is unbooted
+
+- Put user manuals in the github.io
+
+- Put annotated bibliography on the github.io
+
+
+
 - Add instructor/student/team instructions to yml
 
 - Change yml files to yml.erb to be preprocessed in yml for adding ruby functions like random numbers.

@@ -1,14 +1,10 @@
-script "install_elf" do
+script "configure_nat" do
   interpreter "bash"
   user "root"
   cwd "/tmp"
 
   code <<-EOH
-  cd /tmp
-  git clone https://github.com/kahea/elf
-  cd elf
-  ./install
-  cd /tmp
+  echo "placeholder"
 
   EOH
 

@@ -17,10 +17,6 @@ script "install_scapy" do
   #    usermod -a -G scapy $user
   #  fi
   # done
-  #Save bash history after every command
-  echo "shopt -s histappend;export PROMPT_COMMAND='history -a; history -c; history -r; $PROMPT_COMMAND'" >> /etc/profile
-
-
   touch /tmp/test
   EOH
   not_if "test -e /tmp/test"
