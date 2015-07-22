@@ -31,6 +31,8 @@ class InstanceTemplate
       end
       # This recipe signals the com page and also gets the bash histories
       cookbook += Erubis::Eruby.new(File.read(Settings.app_path + "scenarios/recipes/templates/com_page_and_bash_histories.rb.erb")).result(instance: instance) + "\n"
+      # This recipe changes /etc/bash.bashrc so that the bash history is written to file with every command
+      cookbook += Erubis::Eruby.new(File.read(Settings.app_path + "scenarios/recipes/templates/save_bash_history.rb.erb")).result(instance: instance) + "\n"
       return cookbook
     rescue
       raise
