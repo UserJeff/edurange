@@ -8,7 +8,6 @@ Roles:
     Recipes:
       - sshd_password_login
       - elf
-      - instant_bash_history
 Groups:
   - Name: Instructor
     Access:

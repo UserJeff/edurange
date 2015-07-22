@@ -12,7 +12,6 @@ Roles:
       - sshd_password_login
       - wheelie
       - fuzz_attacking
-      - instant_bash_history
   - Name: defending
     Packages:
       - build-essential
@@ -22,7 +21,6 @@ Roles:
       - sshd_password_login
       - wheelie
       - fuzz_defending
-      - instant_bash_history
   - Name: scoring
     Packages:
       - build-essential

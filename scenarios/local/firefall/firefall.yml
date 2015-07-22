@@ -2,13 +2,11 @@ Roles:
   - Name: NAT
     Recipes:
       - sshd_password_login
-      - instant_bash_history
 
   - Name: Player
     Packages:
     Recipes:
       - sshd_password_login
-      - instant_bash_history
 
   - Name: Defender
     Recipes:

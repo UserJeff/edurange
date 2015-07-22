@@ -3,7 +3,6 @@ Roles:
     Recipes:
       - shellinabox
       - sshd_password_login
-      - instant_bash_history
 
   - Name: dns_server
     Packages:
@@ -28,7 +27,6 @@ Roles:
     Recipes:
       - sshd_password_login
       - wheelie
-      - instant_bash_history
 
 Groups:
   - Name: Team_1

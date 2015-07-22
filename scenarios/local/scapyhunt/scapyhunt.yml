@@ -2,7 +2,6 @@ Roles:
   - Name: NAT
     Recipes:
       - sshd_password_login
-      - instant_bash_history
 
   - Name: Player
     Packages:
@@ -14,7 +13,6 @@ Roles:
       - dsniff
     Recipes:
       - sshd_password_login
-      - instant_bash_history
 
 Groups:
   - Name: Instructor
